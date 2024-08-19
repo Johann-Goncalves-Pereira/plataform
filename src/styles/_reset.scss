@@ -1,0 +1,79 @@
+/* 
+*   Kevin Powell
+*   https://youtu.be/cCAtD_BAHNw 
+*/
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	font: inherit; /* Get rid of all font sizes and heights */
+}
+
+html {
+	hanging-punctuation: first last; /* Not supported in Chrome */
+	color-scheme: dark light; /* Default dark */
+}
+
+body {
+	/*
+  Typographic tweaks!
+  - Add accessible line-height
+  - Improve text rendering
+  */
+	line-height: calc(1em + 0.5rem);
+	-webkit-font-smoothing: antialiased;
+	smoothing: antialiased;
+
+	/* Fix for Safari's bug in 100vh */
+	@supports (min-height: 100dvh) {
+		min-height: 100dvh;
+	}
+
+	@supports not (min-height: 100dvh) {
+		min-height: 100vh;
+	}
+}
+
+/* Media responsive */
+img,
+picture,
+svg,
+video {
+	display: block;
+	max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	text-wrap: balance;
+}
+
+p {
+	max-width: 75ch;
+	text-wrap: pretty; /* Prevents orphans on lines */
+}
+
+/* https://medium.com/dev-channel/what-does-dark-modes-supported-color-schemes-actually-do-69c2eacdfa1d */
+input,
+input:matches([type='password'], [type='search']) {
+	-webkit-appearance: textfield;
+	background-color: -apple-system-control-background;
+	color: text;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	:has(:target) {
+		scroll-behavior: smooth;
+		scroll-padding-top: 3rem;
+	}
+}

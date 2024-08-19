@@ -1,0 +1,39 @@
+@mixin light-dark($scheme: dark) {
+	@if $scheme == dark {
+		--color-surface-100: hsl(46 100% 3%);
+		--color-surface-200: hsl(38 16% 24%);
+		--color-surface-300: hsl(34 6% 76%);
+		--color-surface-400: hsl(40 4% 86%);
+		--color-primary-100: hsl(17 83% 46%);
+	} @else {
+		--color-surface-100: hsl(46 100% 97%);
+		--color-surface-200: hsl(38 16% 76%);
+		--color-surface-300: hsl(34 6% 24%);
+		--color-surface-400: hsl(40 4% 14%);
+		--color-primary-100: hsl(17 83% 54%);
+	}
+}
+
+@custom-media --scheme-dark (prefers-color-scheme: dark);
+@custom-media --scheme-light (prefers-color-scheme: light);
+
+:root {
+	--rounded-sm: theme('borderRadius.sm');
+	--rounded: theme('borderRadius.DEFAULT');
+	--rounded-lg: theme('borderRadius.lg');
+	--rounded-xl: theme('borderRadius.xl');
+	--rounded-full: theme('borderRadius.full');
+
+	@media (--scheme-dark) {
+		@include light-dark(dark);
+		&:has(meta[name='color-scheme'][content='light']) {
+			@include light-dark(light);
+		}
+	}
+	@media (--scheme-light) {
+		@include light-dark(light);
+		&:has(meta[name='color-scheme'][content='dark']) {
+			@include light-dark(dark);
+		}
+	}
+}

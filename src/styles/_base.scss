@@ -1,0 +1,43 @@
+body {
+	display: grid;
+	grid-template-rows:
+		var(--body__header--height, 2rem) 1fr
+		var(--body__footer--height, 2rem);
+	grid-template-columns:
+		var(--body__left--width, 2rem) 1fr
+		var(--body__right--width, 2rem);
+	grid-template-areas:
+		'header header header'
+		'left main right'
+		'footer footer footer';
+
+	border: 4px solid hsl(from var(--color-surface-200) h s l / 0.25);
+	border-radius: var(--rounded-lg);
+
+	background-color: var(--color-surface-100);
+
+	> header {
+		grid-area: header;
+	}
+	> aside:first-of-type {
+		grid-area: left;
+	}
+	> main {
+		grid-area: main;
+	}
+	> aside:last-of-type {
+		grid-area: right;
+	}
+	> footer {
+		grid-area: footer;
+	}
+
+	&::after {
+		position: fixed;
+		z-index: -50;
+		inset: 0;
+		border: inherit;
+		pointer-events: none;
+		content: '';
+	}
+}

@@ -20,12 +20,16 @@ export default component$(() => {
 		<>
 			<Header />
 			<aside></aside>
-			<main class='bg-surface-100/50 rounded-lg border-2 border-surface-200 shadow backdrop-blur-lg'>
+			<main class='bg-surface-100/50 m-[var(--body--border--width)] rounded-lg border-2 border-surface-200 shadow backdrop-blur-lg'>
 				<Slot />
 			</main>
 			<aside></aside>
 			<footer></footer>
-			<Background class='fixed inset-0 -z-50 h-[100dvh] w-[100dvw] object-cover blur-3xl' />
+			<Background
+				class='fixed inset-0 -z-50 h-[100dvh] w-[100dvw] object-cover blur-3xl'
+				alt='Image with blur on the background, no one should see this'
+				aria-hidden='true'
+			/>
 		</>
 	)
 })

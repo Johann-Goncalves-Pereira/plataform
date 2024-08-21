@@ -4,8 +4,7 @@
 	$size-button: calc(var(--body__header--height) * 0.875);
 	$size-icon: calc(var(--body__header--height) * 0.595);
 
-	button,
-	div {
+	:where(a, div, button) {
 		transition-duration: 250ms;
 		transition-property: outline background-color;
 		transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -13,6 +12,7 @@
 
 	[aria-label='Search in plataform'] {
 		height: calc(var(--body__header--height) * 0.875);
+		font-size: calc(var(--body__header--height) * 0.5);
 
 		> svg,
 		> button > svg {
@@ -21,11 +21,17 @@
 
 			& ~ input {
 				padding-left: calc($size-icon * 2);
+				font-size: 0.875em;
 			}
 		}
 	}
 
-	&__home {
+	:is(
+			&__home,
+			&__arrows > button,
+			a[href='/settings'],
+			nav[aria-labelledby='header__profile--hamburger'] img
+		) {
 		width: $size-button;
 		height: $size-button;
 	}
@@ -33,6 +39,10 @@
 	&__scheme {
 		padding-inline: 0.25rem;
 		height: $size-button;
+
+		&:has(svg + svg) {
+			aspect-ratio: 16/9;
+		}
 
 		&:not(:has(svg + svg)) {
 			aspect-ratio: 1/1;
@@ -42,5 +52,13 @@
 			width: $size-icon;
 			height: $size-icon;
 		}
+	}
+
+	nav[aria-labelledby='header__profile--hamburger'] dialog::after {
+		position: fixed;
+		z-index: -50;
+		cursor: alias;
+		inset: 0;
+		content: '';
 	}
 }

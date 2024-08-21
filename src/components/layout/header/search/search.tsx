@@ -17,7 +17,11 @@ export default component$(() => {
 			class='bg-surface-100/50 outline-surface-300/50 grid grid-cols-[auto_1fr_auto_auto] items-center rounded-full outline-1 focus-within:outline'
 			aria-label='Search in plataform'
 		>
-			<HiMagnifyingGlassOutline class='stroke-surface-300/50 col-start-1 col-end-1 row-start-1 row-end-1 mx-2 aspect-square' />
+			<HiMagnifyingGlassOutline
+				aria-hidden='true'
+				focusable='false'
+				class='stroke-surface-300/50 pointer-events-none col-start-1 col-end-1 row-start-1 row-end-1 mx-2 aspect-square'
+			/>
 
 			<input
 				class='bg-transparent placeholder:text-surface-400/50 relative col-start-1 col-end-3 row-start-1 row-end-1 h-full appearance-none text-surface-400 outline-none'
@@ -35,8 +39,15 @@ export default component$(() => {
 
 			<div class='bg-surface-300/50 col-start-3 col-end-3 row-start-1 row-end-1 h-1/2 w-px' />
 
-			<button class='col-start-3 col-end-4 row-start-1 row-end-1 grid h-full place-items-center rounded-br-full rounded-tr-full px-2 outline-none -outline-offset-2 focus-visible:outline focus-visible:outline-primary-100'>
-				<HiBars3BottomRightOutline class='stroke-surface-300/50 aspect-square h-2/3' />
+			<button
+				class='col-start-3 col-end-4 row-start-1 row-end-1 grid h-full place-items-center rounded-br-full rounded-tr-full px-2 outline-none -outline-offset-2 focus-visible:outline focus-visible:outline-primary-100'
+				aria-label='Go to Useful pages'
+			>
+				<HiBars3BottomRightOutline
+					aria-hidden='true'
+					focusable='false'
+					class='stroke-surface-300/50 pointer-events-none aspect-square h-2/3'
+				/>
 			</button>
 		</div>
 	)

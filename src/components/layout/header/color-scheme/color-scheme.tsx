@@ -64,17 +64,40 @@ export default component$(() => {
 
 	return (
 		<button
-			class='body__header__scheme bg-surface-100/50 outline-surface-300/50 flex place-items-center gap-1 rounded-full outline-1 focus-visible:outline'
+			class='body__header__scheme bg-surface-100/50 outline-surface-300/50 flex items-center justify-center gap-1 rounded-full outline-1 focus-visible:outline'
 			onClick$={handleColorScheme$}
 		>
 			{colorScheme.value === DARK ? (
-				<HiSunOutline class='stroke-surface-300/50' />
+				<>
+					<HiSunOutline
+						aria-hidden='true'
+						focusable='false'
+						class='stroke-surface-300/50 pointer-events-none'
+					/>
+					<span class='sr-only'>Go to light mode</span>
+				</>
 			) : colorScheme.value === LIGHT ? (
-				<HiMoonOutline class='stroke-surface-300/50' />
+				<>
+					<HiMoonOutline
+						aria-hidden='true'
+						focusable='false'
+						class='stroke-surface-300/50 pointer-events-none'
+					/>
+					<span class='sr-only'>Go to dark mode</span>
+				</>
 			) : (
 				<>
-					<HiSunOutline class='stroke-surface-300/50' />
-					<HiMoonOutline class='stroke-surface-300/50' />
+					<HiMoonOutline
+						aria-hidden='true'
+						focusable='false'
+						class='stroke-surface-300/50 pointer-events-none'
+					/>
+					<HiSunOutline
+						aria-hidden='true'
+						focusable='false'
+						class='stroke-surface-300/50 pointer-events-none'
+					/>
+					<span class='sr-only'>Go to inverse of system mode</span>
 				</>
 			)}
 		</button>

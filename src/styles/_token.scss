@@ -29,6 +29,8 @@
 	--body__left--width: 2rem;
 	--body__right--width: 2rem;
 
+	--body--border--width: 2px;
+
 	@media (--scheme-dark) {
 		@include light-dark(dark);
 		&:has(meta[name='color-scheme'][content='light']) {

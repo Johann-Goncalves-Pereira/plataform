@@ -1,0 +1,46 @@
+.body__header {
+	padding-inline: var(--body__left--width) var(--body__right--width);
+
+	$size-button: calc(var(--body__header--height) * 0.875);
+	$size-icon: calc(var(--body__header--height) * 0.595);
+
+	button,
+	div {
+		transition-duration: 250ms;
+		transition-property: outline background-color;
+		transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	}
+
+	[aria-label='Search in plataform'] {
+		height: calc(var(--body__header--height) * 0.875);
+
+		> svg,
+		> button > svg {
+			width: $size-icon;
+			height: $size-icon;
+
+			& ~ input {
+				padding-left: calc($size-icon * 2);
+			}
+		}
+	}
+
+	&__home {
+		width: $size-button;
+		height: $size-button;
+	}
+
+	&__scheme {
+		padding-inline: 0.25rem;
+		height: $size-button;
+
+		&:not(:has(svg + svg)) {
+			aspect-ratio: 1/1;
+		}
+
+		svg {
+			width: $size-icon;
+			height: $size-icon;
+		}
+	}
+}

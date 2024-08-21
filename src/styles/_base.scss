@@ -1,11 +1,11 @@
 body {
 	display: grid;
 	grid-template-rows:
-		var(--body__header--height, 2rem) 1fr
-		var(--body__footer--height, 2rem);
+		var(--body__header--height) 1fr
+		var(--body__footer--height);
 	grid-template-columns:
-		var(--body__left--width, 2rem) 1fr
-		var(--body__right--width, 2rem);
+		var(--body__left--width) 1fr
+		var(--body__right--width);
 	grid-template-areas:
 		'header header header'
 		'left main right'

@@ -24,6 +24,11 @@
 	--rounded-xl: theme('borderRadius.xl');
 	--rounded-full: theme('borderRadius.full');
 
+	--body__header--height: 2rem;
+	--body__footer--height: 2rem;
+	--body__left--width: 2rem;
+	--body__right--width: 2rem;
+
 	@media (--scheme-dark) {
 		@include light-dark(dark);
 		&:has(meta[name='color-scheme'][content='light']) {
@@ -35,5 +40,10 @@
 		&:has(meta[name='color-scheme'][content='dark']) {
 			@include light-dark(dark);
 		}
+	}
+
+	&:not(:has(meta[name='color-scheme'][content='light'])),
+	&:not(:has(meta[name='color-scheme'][content='dark'])) {
+		visibility: hidden;
 	}
 }

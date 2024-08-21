@@ -17,7 +17,6 @@
 
 html {
 	hanging-punctuation: first last; /* Not supported in Chrome */
-	color-scheme: dark light; /* Default dark */
 }
 
 body {
@@ -63,9 +62,36 @@ p {
 	text-wrap: pretty; /* Prevents orphans on lines */
 }
 
+/* clears the ‘X’ from Internet Explorer */
+input[type='search']::-ms-clear {
+	display: none;
+	width: 0;
+	height: 0;
+}
+input[type='search']::-ms-reveal {
+	display: none;
+	width: 0;
+	height: 0;
+}
+/* clears the ‘X’ from Chrome */
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+	display: none;
+}
+
+// [class*=':outline'] {
+// 	&:hover,
+// 	&:active,
+// 	&:focus-within,
+// 	&:focus-visible {
+// 		outline-style: solid;
+// 	}
+// }
+
 /* https://medium.com/dev-channel/what-does-dark-modes-supported-color-schemes-actually-do-69c2eacdfa1d */
-input,
-input:matches([type='password'], [type='search']) {
+:where(input, input:matches([type='password'], [type='search'])) {
 	-webkit-appearance: textfield;
 	background-color: -apple-system-control-background;
 	color: text;

@@ -9,6 +9,7 @@ export default {
 			'surface-400': 'hsl(from var(--color-surface-400) h s l / <alpha-value>)',
 			'primary-100': 'hsl(from var(--color-primary-100) h s l / <alpha-value>)',
 			current: 'currentColor',
+			transparent: 'transparent',
 		},
 		extend: {},
 	},

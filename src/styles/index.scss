@@ -1,4 +1,12 @@
-@use "base";
-@use "reset";
-@use "tailwind";
-@use "token";
+@use 'base';
+@use 'reset';
+@use 'token';
+
+/**
+ * Tailwind CSS imports
+ * View the full documentation at https://tailwindcss.com
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

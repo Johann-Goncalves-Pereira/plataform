@@ -9,8 +9,8 @@ import { isDev } from '@builder.io/qwik/build'
 
 import '@total-typescript/ts-reset'
 
-import './tailwind.css'
 import './styles/_index.scss'
+import './tailwind.css'
 
 export default component$(() => {
 	/**

@@ -52,6 +52,11 @@
 	text-wrap: pretty; /* Prevents orphans on lines */
 }
 
+::selection {
+	background-color: var(--color-primary-500);
+	color: var(--color-surface-100);
+}
+
 /* clears the ‘X’ from Chrome */
 input[type='search']::-webkit-search-decoration,
 input[type='search']::-webkit-search-cancel-button,

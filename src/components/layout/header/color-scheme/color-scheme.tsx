@@ -39,7 +39,7 @@ export default component$(() => {
 		// Add CSS transition
 		const style = document.createElement('style')
 		style.textContent =
-			'*,*::before,*::after{transition: all 250ms  cubic-bezier(0.165, 0.84, 0.44, 1);}'
+			'*,*::before,*::after{transition: all 250ms var(--cubic-bezier);}'
 		document.head.append(style)
 
 		// Set color-scheme
@@ -64,7 +64,7 @@ export default component$(() => {
 
 	return (
 		<button
-			class='body__header__scheme bg-surface-100/50 outline-surface-300/50 flex items-center justify-center gap-1 rounded-full outline-1 focus-visible:outline'
+			class='body__header__scheme flex items-center justify-center gap-1 rounded-full bg-surface-100/50 outline-1 outline-surface-300/50 focus-visible:outline'
 			onClick$={handleColorScheme$}
 		>
 			{colorScheme.value === DARK ? (
@@ -72,7 +72,7 @@ export default component$(() => {
 					<HiSunOutline
 						aria-hidden='true'
 						focusable='false'
-						class='stroke-surface-300/50 pointer-events-none'
+						class='pointer-events-none stroke-surface-300/50'
 					/>
 					<span class='sr-only'>Go to light mode</span>
 				</>
@@ -81,7 +81,7 @@ export default component$(() => {
 					<HiMoonOutline
 						aria-hidden='true'
 						focusable='false'
-						class='stroke-surface-300/50 pointer-events-none'
+						class='pointer-events-none stroke-surface-300/50'
 					/>
 					<span class='sr-only'>Go to dark mode</span>
 				</>
@@ -90,12 +90,12 @@ export default component$(() => {
 					<HiMoonOutline
 						aria-hidden='true'
 						focusable='false'
-						class='stroke-surface-300/50 pointer-events-none'
+						class='pointer-events-none stroke-surface-300/50'
 					/>
 					<HiSunOutline
 						aria-hidden='true'
 						focusable='false'
-						class='stroke-surface-300/50 pointer-events-none'
+						class='pointer-events-none stroke-surface-300/50'
 					/>
 					<span class='sr-only'>Go to inverse of system mode</span>
 				</>

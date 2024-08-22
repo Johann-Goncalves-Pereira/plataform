@@ -1,6 +1,7 @@
 module.exports = {
 	plugins: {
 		autoprefixer: {},
+		tailwindcss: {},
 		'postcss-preset-env': {
 			precalculate: false,
 			// stage: 3,
@@ -10,6 +11,5 @@ module.exports = {
 				'light-dark-function': false,
 			},
 		},
-		tailwindcss: {},
 	},
 }

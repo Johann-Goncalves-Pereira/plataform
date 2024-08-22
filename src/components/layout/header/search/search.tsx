@@ -40,7 +40,7 @@ export default component$(() => {
 			<div class='bg-surface-300/50 col-start-3 col-end-3 row-start-1 row-end-1 h-1/2 w-px' />
 
 			<button
-				class='col-start-3 col-end-4 row-start-1 row-end-1 grid h-full place-items-center rounded-br-full rounded-tr-full px-2 outline-none -outline-offset-2 focus-visible:outline focus-visible:outline-primary-100'
+				class='focus-visible:outline-primary-500 col-start-3 col-end-4 row-start-1 row-end-1 grid h-full place-items-center rounded-br-full rounded-tr-full px-2 outline-none -outline-offset-2 focus-visible:outline'
 				aria-label='Go to Useful pages'
 			>
 				<HiBars3BottomRightOutline

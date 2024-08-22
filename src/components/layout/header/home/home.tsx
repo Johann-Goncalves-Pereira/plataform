@@ -10,7 +10,7 @@ export default component$(() => {
 			<HiHomeOutline
 				aria-hidden='true'
 				focusable='false'
-				class='stroke-surface-300/50 pointer-events-none h-2/3 w-2/3'
+				class='stroke-surface-300/50 pointer-events-none mt-px h-2/3 w-2/3'
 			/>
 		</button>
 	)

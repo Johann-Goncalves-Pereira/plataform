@@ -2,7 +2,7 @@ button {
 	svg,
 	span {
 		// opacity: 0;
-		animation: spinScalePopShow 250ms cubic-bezier(0.165, 0.84, 0.44, 1)
+		animation: spinScalePopShow 250ms var(--cubic-bezier)
 			forwards;
 	}
 }
